@@ -1,0 +1,85 @@
+@import 'mixins/grid';
+@import 'mixins/gap';
+
+
+@function countWeight($number){
+    @return calc(100% / 2 - (#{$number}  / 12 * 4) - 40px) ;
+}
+
+@mixin linkHover($color, $hColor){
+    color: $color;
+    transition: all .3s;
+    &:hover{
+        color: $hColor;
+    }
+}
+@mixin gridAndGup($columns, $gup: 20px, $alignItems: start){
+    display: grid;
+    grid-template-columns: $columns;
+    align-items: $alignItems;
+    grid-gap: $gup;
+}
+
+
+@mixin btn(){
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin btn-arround($colorBack, $color, $colorHover){
+    @include btn();
+    padding: 8px 70px;
+    background: $colorBack;
+    color: $color;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: $font-bold;
+    transition: all .3s;
+    &:hover{
+        color: $colorHover
+    }
+}
+
+@mixin mainPhone() {
+    & .__main__phone__mts, .__main__phone__a1{
+        display: flex;
+        align-items: center;
+        & img{
+            width: 18px;
+            height: 18px;
+            margin-right: 6px;
+        }
+    }
+    & .__main__phone__mts{
+        margin-top: 10px;
+    }
+    & a{
+        font-family: $font-bold;
+        font-size: 15px;
+    }
+}
+
+@mixin footerPhone(){
+    & .__right__phone__a1, .__right__phone__mts{
+        display: flex;
+        align-items: center;
+        & a{
+            font-family: $font-bold;
+            font-size: 20px;
+            margin-left: 6px;
+        }
+    }
+}
+
+@mixin btnArroundSticker($color){
+    background: $color;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+
+    & > svg{
+        width: 14px;
+        height: 12px;
+    }
+}

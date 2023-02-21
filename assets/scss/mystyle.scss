@@ -1,0 +1,7 @@
+//@import 'style/header.scss';
+@import 'style/home.scss';
+//@import 'style/footer.scss';
+
+.header{
+  @include gridAndGup(123);
+}

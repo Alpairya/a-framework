@@ -1,0 +1,89 @@
+@import 'mixins';
+/*Fonts*/
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("./../../build/fonts/Montserrat-Regular.woff2");
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("./../../build/fonts/Montserrat-Bold.woff2");
+}
+@font-face {
+    font-family: "Marvin";
+    src: url("./../../build/fonts/Marvin.woff2");
+}
+$font-main: 'Montserrat-Regular';
+$font-bold: 'Montserrat-Bold';
+$font-other: 'Marvin';
+/*Colors and Gradients*/
+$black: #000;
+$white: #fff;
+
+$light-black: #010039;
+$gray:        #B2B2B2;
+
+$red:    #D01012;
+$yellow: #FFC42E;
+$orange: #FF6B00;
+$blue:   #012299;
+$swamp:  #4280BB;
+
+$gradient-main: linear-gradient(174.03deg, #FFC42E -3%, #D01012 95.27%);
+
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover
+}
+.container{
+    @include customWidth();
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $font-main;
+    color: $black;
+}
+h1, h2, h3, h4, h5{
+    font-family: $font-other;
+}
+a{
+    text-decoration: none;
+}
+p{
+    font-size: 16px;
+}
+
+/*
+Buttons
+*/
+button{
+    @include btn();
+}
+.btn_yellow{
+    @include btn-arround($yellow, $black, $red);
+    @include linkHover($black, $red);
+}
+
+.btn_yell{
+    @include btn-arround($yellow, $black, $red);
+    @include linkHover($black, $white);
+}
+
+.btn_red{
+    @include btn-arround($red, $white, $black);
+}
+
+.sticker_yellow{
+    @include btnArroundSticker($yellow);
+}
+.sticker_red{
+    @include btnArroundSticker(darken($red, 20%));
+}
+.sticker_blue{
+    @include btnArroundSticker($blue);
+}
+.sticker_orange{
+    @include btnArroundSticker($orange);
+}

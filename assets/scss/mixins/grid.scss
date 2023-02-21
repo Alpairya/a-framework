@@ -1,0 +1,82 @@
+@import 'gap';
+@import '../variables/setting';
+
+//Контейнер на всю ширину
+@mixin fullWidth(){
+    width: 100%;
+}
+
+//Кастомная стандартная сетка для разных разрешений
+@mixin customWidth() {
+    margin: 0 auto;
+    @media screen and (min-width: 1460px) {
+        max-width: 1488px;
+    }
+    @media screen and (max-width: 1460px) {
+        max-width: 1140px;
+    }
+    @media screen and (max-width: 1200px) {
+        max-width: 960px;
+    }
+    @media screen and (max-width: 992px) {
+        max-width: 736px;
+        & > div{
+            @include paddingMobile();
+        }
+    }
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+    }
+}
+
+//Дефолтное значение сетки для равномерных отступов вертикальных и горизонтальных
+@mixin gridAndGup($columns: 1fr, $gup: $default-gap, $alignItems: start){
+    display: grid;
+    grid-template-columns: $columns;
+    grid-gap: $gup;
+    align-items: $alignItems;
+}
+
+//Значение сетки с разными отступами по вертикали и горизонтали
+@mixin gridAndGupPlus($columns: 1fr, $gupW: $default-gap, $gupH: $default-gap, $alignItems: start){
+    display: grid;
+    grid-template-columns: $columns;
+    grid-row-gap: $gupW;
+    grid-column-gap: $gupH;
+    align-items: $alignItems;
+}
+
+@mixin flexGrid($num){
+    grid-template-columns: repeat(auto-fit, minmax($num, 1fr));
+}
+
+@function iuyiuy($num){
+    @return repeat(auto-fit, minmax($num, 1fr));
+}
+
+$columns-250: repeat(auto-fit, minmax(250px, 1fr));
+$columns-350: repeat(auto-fit, minmax(350px, 1fr));
+$columns-450: repeat(auto-fit, minmax(550px, 1fr));
+
+//Сетка Буттстрапа
+@mixin bootstrapWidth() {
+    margin: 0 auto;
+    @media screen and (min-width: 1560px) {
+        max-width: 1500px;
+    }
+    @media screen and (min-width: 1200px) {
+        max-width: 1140px;
+    }
+    @media screen and (min-width: 992px) {
+        max-width: 960px;
+    }
+    @media screen and (min-width: 768px) {
+        max-width: 720px;
+        & > div{
+            @include padding();
+        }
+    }
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+    }
+}

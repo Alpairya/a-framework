@@ -1,0 +1,8 @@
+@mixin paddingMobile {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@mixin paddingT($pL, $pR) {
+  padding-top: $pL;
+  padding-bottom: $pR;
+}

@@ -1,0 +1,17 @@
+//grid and gap
+$default-gap: 20px;
+
+//Gradients and Colors
+/*Colors and Gradients*/
+$black: #000;
+$white: #fff;
+
+$color1: aqua;
+$color2: blue;
+$color3: black;
+$color4: yellow;
+$color5: black;
+
+$gradient1: linear-gradient(0deg, $color2 0%, $color3 100%);
+$gradient2: linear-gradient(0deg, rgba(163,163,163,1) 0%, rgba(255,255,255,1) 100%);
+$gradient3: linear-gradient(0deg, rgba(163,163,163,1) 0%, rgba(255,255,255,1) 100%);
